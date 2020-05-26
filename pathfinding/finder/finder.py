@@ -67,7 +67,8 @@ class Finder(object):
 
         # weight for weighted algorithms
         if self.weighted:
-            ng *= node_b.weight
+            # Calculate absolute value of difference in weight (height) between current node and neighbor node
+            ng *= abs(node_a.weight - node_b.weight)
 
         return node_a.g + ng
 
